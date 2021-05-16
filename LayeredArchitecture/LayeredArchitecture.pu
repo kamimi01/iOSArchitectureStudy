@@ -1,0 +1,23 @@
+@startuml
+
+title レイヤードアーキテクチャの最終形態
+
+object Presentation
+object Application
+object Domain
+object 抽象化されたInterface
+object Data
+
+Presentation  --> Application: 依存
+Application  --> Domain: 依存
+Domain --> 抽象化されたInterface: 関連
+Data --> 抽象化されたInterface: 依存
+
+note right of 抽象化されたInterface
+  「Repository」と呼ばれる
+  ---
+  * 手段は問わず、とにかくDomain層に合わせた形で
+  オブジェクトが取得できる
+end note
+
+@enduml

@@ -133,5 +133,82 @@
 
 ### レイヤードアーキテクチャ
 
+![](./LayeredArchitecture/レイヤードアーキテクチャの最終形態.png)
+
 - 関心によってレイヤーを分ける
-- Domain層がData層に
+- Domain層がData層に依存しないよう、Dependency Injection（依存オブジェクトの注入）を行った
+  - それにより、Data層へのドメイン知識の漏洩は防がれる
+
+### Hexagonal Architecture（Ports And Adapters Architecture）
+![](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F30489%2F7e133df6-2b84-d6f6-e09e-75a1182eec0b.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=f7f3f072dc79719ac538b73b594b9ec1)
+
+- iOSにおけるプライマリアダプターとセカンダリアダプター
+![](https://miro.medium.com/max/1956/1*9B1EsZPbhElSEFDZU3IpXA.png)
+
+- Presentation層でも、Domain層にあるべきドメイン知識が漏洩しがちだったが、それを防ぐ
+  - DataやPresentation層を「外部との接続に関するレイヤー」として捉える
+- ポートとアダプターの概念がある
+  - ポート
+    - 外部との接続
+    - 目的の単位で抽象化される
+  - アダプター
+    - 差し込まれた外部モジュールの実装詳細を隠蔽し、ポートが期待するインターフェースへの変換する
+    - プライマリアダプター
+      - アプリケーションを駆動するためのもの
+    - セカンダリアダプター
+      - アプリケーションによって駆動されるためのもの
+
+#### 参考
+
+- [Hexagonal Architecture for iOS](https://betterprogramming.pub/hexagonal-architecture-for-ios-part-1-600441c186b7)
+
+### Onion Architecture
+
+![](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F30489%2F18f36be6-c6b7-d99c-c7cb-63f1ec443a28.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=4fa74e2a614f8e4e54366928492cf29a)
+
+- 基本的な考えは、Hexagonal Architectureと変わりない
+- 同じく、Data層を外側におき、Adapterパターンによってアプリケーションを疎結合に保つもの
+- Hexagonal Architectureとの違い
+  - アプリケーションの視覚表現として、六角形ではなく円を用いている
+  - アプリケーション内部を複数の円で分割している
+- 円の中心にあるのは、モデルの状態と振る舞いを表現するDomain Model
+  - **Domain ServiceやApplication Serviceがあるが、必ずしもそのレイヤーに分かれている必要はない**
+- 4つの特徴
+  - アプリケーションは自立したオブジェクトモデルを取り囲むように作られる
+  - 内側のレイヤーはインターフェースを定義し、外側のレイヤーはそれを実装する
+  - 依存の方向は外側から内側
+  - Application Coreはインフラストラクチャ（Data層）抜きでコンパイル・実行できる
+
+#### 参考
+
+- [[DDD]ドメイン駆動 + オニオンアーキテクチャ概略](https://qiita.com/little_hand_s/items/2040fba15d90b93fc124)
+
+### Clean Architecture
+
+![](https://qiita-image-store.s3.amazonaws.com/0/30489/ede07478-3be1-732a-82b3-c3558f4c9e49.png)
+
+- 今まで提唱された様々なアーキテクチャを統合したもの
+
+## モバイルアプリにおけるアーキテクチャ
+
+- 画面遷移をどう設計するか
+
+### CoordinatorパターンとMVVM-C
+
+- アプリのルートに存在するApplicaion Coordinatorを頂点とした階層構造によって画面遷移を表現する
+- 一般的には、画面遷移を行う場合は、View Controller内で次のView Controllerをインスタンス化し、Navigation ControllerへのpushやModalのpresentを行うが、それだと、View Controllerは次のView Controllerを指定いる必要がある。
+  - 遷移先が複数存在する場合や、使いまわしたい場合に、遷移ロジックが肥大化するのを防ぐ
+
+#### 参考
+
+- [How to use the Coordinator pattern in iOS](https://www.youtube.com/watch?v=7HgbcTqxoN4)
+
+### RouterパターンとVIPER
+
+- 「View」「Iteractor」「Presenter」「Entity」「Routing」
+- Clean Architecture +  MVP（Passive View） + Router
+  - RouterはPresenterに画面遷移を指示する
+- Routerの役割
+  - 遷移先のView Controllerの生成
+  - 遷移先のView Controllerが依存するコラボレーターの生成と代入
+  - 画面遷移の実施方法の定義
