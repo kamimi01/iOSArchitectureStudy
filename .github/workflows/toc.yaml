@@ -1,6 +1,5 @@
 name: toc-generate
 
-# feature以下のブランチにプッシュされた場合のみ起動
 on: 
   push:
     branches:
