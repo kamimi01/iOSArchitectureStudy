@@ -1,0 +1,24 @@
+name: toc-generate
+
+# feature以下のブランチにプッシュされた場合のみ起動
+on: 
+  push:
+    branches:
+      - "main"
+
+jobs:
+  # with以下でtoc-generatorの設定を指定
+  generateTOC:
+    name: TOC Generator
+    runs-on: ubuntu-latest
+    steps:
+      - uses: technote-space/load-config-action@v1
+        with:
+          CONFIG_FILENAME: workflow-settings.json
+      - name: toc-generator
+        uses: technote-space/toc-generator@v3
+        with:
+          FOLDING: ${{ env.TOC_FOLDING }}
+          TOC_TITLE: ${{ env.TOC_TITLE }}
+          COMMIT_MESSAGE: ${{ env.TOC_COMMIT_MESSAGE }}
+          TARGET_PATHS: ${{ env.TOC_TARGET_PATHS }}
