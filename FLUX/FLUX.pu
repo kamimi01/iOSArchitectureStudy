@@ -1,0 +1,32 @@
+@startuml
+
+title FLUX
+
+hide footbox
+
+actor ユーザー as user
+participant View as view
+participant Dispatcher as dispatcher
+participant Store as store
+
+user -> view: ユーザーが入力する
+activate view
+
+view -> dispatcher: 入力を受け、\nActionに変換して送る
+activate dispatcher
+
+dispatcher -> store: Actionを送る
+deactivate dispatcher
+activate store
+
+store -> store: Actionに応じて処理を行う
+
+store -> view: 変更イベントを伝える（ディスパッチする）
+deactivate store
+
+view -> view: 変更イベントを受け、\n自身を更新する
+
+view -> user: ユーザーに表示する
+deactivate view
+
+@enduml

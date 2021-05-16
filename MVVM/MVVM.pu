@@ -1,0 +1,41 @@
+@startuml
+
+title Model-View-ViewModel（MVVM）
+
+hide footbox
+
+actor ユーザー as user
+participant View as view
+participant "View Model" as viewmodel
+participant Model as model
+
+user -> view: ユーザーの入力を受ける
+activate view
+
+view -> viewmodel: ユーザの入力を受けて、\nコマンドを送る
+activate viewmodel
+
+viewmodel -> model: コマンドを送る
+activate model
+
+model -> model: コマンドを受けて処理を行い、\n自身を更新する
+
+model -> viewmodel: 変更を通知する
+deactivate model
+
+viewmodel -> viewmodel: プレゼンテーションロジックの表現や\n状態管理を行う
+
+viewmodel -> view: バインディングする
+
+note right
+  RxSwiftやReactiveSwift、SwiftUIなど
+  を使用してバイディング
+end note
+
+deactivate viewmodel
+view -> view: 変更があった場合は、\n自身を更新する
+
+view -> user: 表示する
+deactivate view
+
+@enduml

@@ -1,0 +1,42 @@
+@startuml
+
+title Model-View-Presenter（Supervising）
+
+hide footbox
+
+actor ユーザー as user
+box ウィジェット（UIコンポーネントを指す）
+participant View as view
+participant Presenter as presenter
+end box
+participant Model as model
+
+user -> view: ユーザーが入力する
+activate view
+
+view -> presenter: 入力イベントを伝える
+activate presenter
+
+presenter -> model: 入力を受け、コマンドを送る
+activate model
+
+model -> model: コマンドを受けて処理を行い、\n自身を更新する
+
+group Viewの更新を行う\n（フロー同期とオブザーバ同期の2つの方法があり、両方使用する）
+  group フロー同期
+    model -> presenter: Modelの変更を通知する
+    presenter -> view: Presenterが処理の最中になんらかのタイミングで\nViewのインスタンスを直接更新
+    deactivate presenter
+  end 
+
+  group オブザーバ同期
+    view -> model: Modelの変更を監視する
+    deactivate model
+    view -> view: Modelに更新があった場合は、\n自身を更新する
+  end
+end
+
+view -> user: ユーザーに表示する
+deactivate view
+
+@enduml

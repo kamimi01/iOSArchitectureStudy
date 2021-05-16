@@ -1,0 +1,36 @@
+@startuml
+
+title Model-View-Presenter（Passive View）
+
+hide footbox
+
+actor ユーザー as user
+box ウィジェット（UIコンポーネントを指す）
+participant View as view
+participant "Presenter\n（CocoaMVCではController）" as presenter
+end box
+participant Model as model
+
+user -> view: ユーザーが入力する
+activate view
+
+view -> presenter: 入力イベントを伝える
+activate presenter
+
+presenter -> model: 入力を受け、コマンドを送る
+activate model
+
+model -> model: コマンドを受けて処理を行い、\n自身を更新する
+
+group フロー同期
+  model -> presenter: Modelの変更を受け取る
+  deactivate model
+
+  presenter -> view: Viewを直接更新
+  deactivate presenter
+end
+
+view -> user: ユーザーに表示する
+deactivate view
+
+@enduml
