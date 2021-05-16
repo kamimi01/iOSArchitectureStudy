@@ -22,6 +22,26 @@
 - ウィジェット単位でプレゼンテーションロジックとドメインを分離する
 - Modelの変更にたいし、オブザーバー 同期が行われる
 
+#### 実装
+
+- Model
+  - NotificationCenterを使用して、Modelの変更をViewとControllerに通知できるようにする
+    - [【Swift】NotificationCenterの使い方](https://qiita.com/ryo-ta/items/2b142361996657463e5f)
+    - [NotificationCenter.addObserverのドキュメントがわからない](https://qiita.com/eytyet/items/2690c570088a062b4afc)
+  - didSetを使い、変数の変更を通知する
+    - [Swiftのプロパティ監視willset/didset](http://tc-kazuki.hatenablog.jp/entry/2017/11/17/134050)
+- Controller
+  - Modelに処理を依頼するため、Modelをプロパティとして保持する（だが、更新通知は受け取らない）
+  - Viewで定義するUIコンポーネントのイベントを直接受け取るために、`@objc`修飾子をつける
+    - イベントを受け取ったら、Modelに処理を依頼する
+  - その他の知識
+    - 必須イニシャライザ
+      - サブクラスでの実装が必須となる
+      - [Swiftとイニシャライザ](https://qiita.com/shtnkgm/items/8b7979fc84a3cc065238)
+    - メタタイプ（Type）
+      - メタデータは型についてのSwiftの内部情報です。例えばインスタンスのサイズや、enumのcase数などが含まれている
+      - [Swift Type Metadata (ja)](https://kateinoigakukun.hatenablog.com/entry/2019/03/22/180030)
+
 #### 課題
 
 - プレゼンテーションロジックの表現ができない

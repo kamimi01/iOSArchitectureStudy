@@ -12,7 +12,7 @@ end box
 participant Model as model
 
 user -> controller: ユーザーが入力する
-activate controller
+actih h vate controller
 
 controller -> model: 入力を受け、コマンドを送る
 deactivate controller
