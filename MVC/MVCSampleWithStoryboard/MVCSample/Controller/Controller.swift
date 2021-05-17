@@ -16,9 +16,11 @@ class Controller {
     
     // Viewで定義するUIButtonのタップイベントを直接受け取るために、@objc修飾子をつける
     @objc func onMinusTapped() {
+        print("modelのマイナス関数を呼ぶ")
         myModel?.countDown()
     }
     @objc func onPlusTapped() {
+        print("modelのプラス関数を呼ぶ")
         myModel?.countUp()
     }
 }

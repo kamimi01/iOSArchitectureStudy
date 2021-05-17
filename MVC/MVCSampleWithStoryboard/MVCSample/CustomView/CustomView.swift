@@ -20,6 +20,7 @@ class CustomView: UIView {
     
     var myModel: Model? {
         didSet {
+            print("myModelに変更があった")
             // ControllerとModelの監視を開始する
             registerModel()
         }
@@ -69,6 +70,7 @@ class CustomView: UIView {
         minusButton.addTarget(controller, action: #selector(Controller.onMinusTapped), for: .touchUpInside)
         plusButton.addTarget(controller, action: #selector(Controller.onPlusTapped), for: .touchUpInside)
         
+        print("modelが変わったので呼ばれた関数")
         model.notificationCenter.addObserver(forName: .init(rawValue: "count"),
                                              object: nil,
                                              queue: nil,
