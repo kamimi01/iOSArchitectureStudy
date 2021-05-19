@@ -6,42 +6,44 @@
 <details>
 <summary>Details</summary>
 
-- [2種類のアーキテクチャ](#2%E7%A8%AE%E9%A1%9E%E3%81%AE%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3)
-- [GUIアーキテクチャ](#gui%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3)
-  - [Model-View-Controller（MVC）モデル](#model-view-controllermvc%E3%83%A2%E3%83%87%E3%83%AB)
-    - [UML](#uml)
-    - [特徴](#%E7%89%B9%E5%BE%B4)
-    - [実装](#%E5%AE%9F%E8%A3%85)
-    - [課題](#%E8%AA%B2%E9%A1%8C)
-  - [Presentation Modelパターン（Application Modelパターン）](#presentation-model%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3application-model%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3)
-    - [UML](#uml-1)
-    - [特徴](#%E7%89%B9%E5%BE%B4-1)
-    - [課題](#%E8%AA%B2%E9%A1%8C-1)
-  - [Model-View-ViewModel（MVVM）](#model-view-viewmodelmvvm)
-    - [UML](#uml-2)
-    - [特徴](#%E7%89%B9%E5%BE%B4-2)
-    - [課題（デメリット）](#%E8%AA%B2%E9%A1%8C%E3%83%87%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88)
-    - [参考](#%E5%8F%82%E8%80%83)
-  - [Model-View-Presenter（MVP）](#model-view-presentermvp)
-    - [MVP（Taligent）](#mvptaligent)
-    - [MVP（Supervising Controller）](#mvpsupervising-controller)
-    - [MVP（Passive View）](#mvppassive-view)
-  - [Flux](#flux)
-    - [UML](#uml-3)
-    - [特徴](#%E7%89%B9%E5%BE%B4-3)
-  - [Redux](#redux)
-    - [特徴](#%E7%89%B9%E5%BE%B4-4)
-- [システムアーキテクチャ](#%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3)
-  - [レイヤードアーキテクチャ](#%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%83%89%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3)
-  - [Hexagonal Architecture（Ports And Adapters Architecture）](#hexagonal-architectureports-and-adapters-architecture)
-    - [参考](#%E5%8F%82%E8%80%83-1)
-  - [Onion Architecture](#onion-architecture)
-    - [参考](#%E5%8F%82%E8%80%83-2)
-  - [Clean Architecture](#clean-architecture)
-- [モバイルアプリにおけるアーキテクチャ](#%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3)
-  - [CoordinatorパターンとMVVM-C](#coordinator%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%81%A8mvvm-c)
-    - [参考](#%E5%8F%82%E8%80%83-3)
-  - [RouterパターンとVIPER](#router%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%81%A8viper)
+- [「iOSアプリ設計パターン入門」から学ぶ、設計の基礎](#iosアプリ設計パターン入門から学ぶ設計の基礎)
+  - [Table of Contents](#table-of-contents)
+  - [2種類のアーキテクチャ](#2種類のアーキテクチャ)
+  - [GUIアーキテクチャ](#guiアーキテクチャ)
+    - [Model-View-Controller（MVC）モデル](#model-view-controllermvcモデル)
+      - [UML](#uml)
+      - [特徴](#特徴)
+      - [実装](#実装)
+      - [課題](#課題)
+    - [Presentation Modelパターン（Application Modelパターン）](#presentation-modelパターンapplication-modelパターン)
+      - [UML](#uml-1)
+      - [特徴](#特徴-1)
+      - [課題](#課題-1)
+    - [Model-View-ViewModel（MVVM）](#model-view-viewmodelmvvm)
+      - [UML](#uml-2)
+      - [特徴](#特徴-2)
+      - [課題（デメリット）](#課題デメリット)
+      - [参考](#参考)
+    - [Model-View-Presenter（MVP）](#model-view-presentermvp)
+      - [MVP（Taligent）](#mvptaligent)
+      - [MVP（Supervising Controller）](#mvpsupervising-controller)
+      - [MVP（Passive View）](#mvppassive-view)
+    - [Flux](#flux)
+      - [UML](#uml-3)
+      - [特徴](#特徴-3)
+    - [Redux](#redux)
+      - [特徴](#特徴-4)
+  - [システムアーキテクチャ](#システムアーキテクチャ)
+    - [レイヤードアーキテクチャ](#レイヤードアーキテクチャ)
+    - [Hexagonal Architecture（Ports And Adapters Architecture）](#hexagonal-architectureports-and-adapters-architecture)
+      - [参考](#参考-1)
+    - [Onion Architecture](#onion-architecture)
+      - [参考](#参考-2)
+    - [Clean Architecture](#clean-architecture)
+  - [モバイルアプリにおけるアーキテクチャ](#モバイルアプリにおけるアーキテクチャ)
+    - [CoordinatorパターンとMVVM-C](#coordinatorパターンとmvvm-c)
+      - [参考](#参考-3)
+    - [RouterパターンとVIPER](#routerパターンとviper)
 
 </details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -74,6 +76,7 @@
   - NotificationCenterを使用して、Modelの変更をViewとControllerに通知できるようにする
     - [【Swift】NotificationCenterの使い方](https://qiita.com/ryo-ta/items/2b142361996657463e5f)
     - [NotificationCenter.addObserverのドキュメントがわからない](https://qiita.com/eytyet/items/2690c570088a062b4afc)
+    - [iOSアプリのしくみ・アプリ内通知](https://note.com/kaigian/n/n62db4f735068#T1LjS)
   - didSetを使い、変数の変更を通知する
     - [Swiftのプロパティ監視willset/didset](http://tc-kazuki.hatenablog.jp/entry/2017/11/17/134050)
 - Controller
@@ -85,8 +88,12 @@
       - サブクラスでの実装が必須となる
       - [Swiftとイニシャライザ](https://qiita.com/shtnkgm/items/8b7979fc84a3cc065238)
     - メタタイプ（Type）
-      - メタデータは型についてのSwiftの内部情報です。例えばインスタンスのサイズや、enumのcase数などが含まれている
+      - `type(of:)`で型を取得でき、`String.Type`のようになる
+      - [[Swift 3] 型名を取得する](https://dev.classmethod.jp/articles/swift-3-type-of/)
       - [Swift Type Metadata (ja)](https://kateinoigakukun.hatenablog.com/entry/2019/03/22/180030)
+    - 循環参照を起こさせない`[unowned self]`
+      - キャプチャ`[]`で囲うとその後その変数に何を代入しても代入前の値を見るようになる
+      - [普段なにげなく書いている[unowned self]の意味を調べる](https://qiita.com/shimesaba/items/f433de0850bf09a1d50d)
 
 #### 課題
 

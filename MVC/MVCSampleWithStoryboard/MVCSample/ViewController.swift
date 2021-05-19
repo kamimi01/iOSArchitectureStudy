@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // これは何をしている？？
+        // このViewControllerのviewをcustomViewに置き換え
         view = customView
         // ここで外部からViewにModelを渡す
         customView.myModel = Model()
