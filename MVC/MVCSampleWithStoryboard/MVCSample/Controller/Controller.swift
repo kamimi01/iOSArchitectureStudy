@@ -10,9 +10,13 @@ import Foundation
 
 class Controller {
     // Modelへ更新処理を依頼するため、Modelをプロパティとして保持する
-    weak var myModel: Model?
+    weak var myModel: ModelProtocol?
+    
     // 必須イニシャライザ｜Required Initializerであり、サブクラスでの実装が必須となる
-    required init() {}
+    // 単体テストの際にモック化したModelをDependency Injectionするためにコンストラクタインジェクションを行う
+    required init(myModel: ModelProtocol = Model()) {
+        self.myModel = myModel
+    }
     
     // Viewで定義するUIButtonのタップイベントを直接受け取るために、@objc修飾子をつける
     @objc func onMinusTapped() {

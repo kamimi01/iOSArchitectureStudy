@@ -8,7 +8,13 @@
 import Foundation
 // UIに関する処理は行わないため、UIKitはインポートしない！
 
-final class Model {
+// weak参照のmodelに適用可能にするため、AnyObjectを継承する
+protocol ModelProtocol: AnyObject {
+    func countDown()
+    func countUp()
+}
+
+final class Model: ModelProtocol {
     // Modelの状態更新を、ViewとControllerに通知する
     let notificationCenter = NotificationCenter()
     private(set) var count = 0 {

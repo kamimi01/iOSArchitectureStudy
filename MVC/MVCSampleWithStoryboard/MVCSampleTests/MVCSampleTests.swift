@@ -18,7 +18,7 @@ class MVCSampleTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func test_カウントがマイナス1される() throws {
+    func test_Model_カウントがマイナス1される() throws {
         // Arrange
         let model = Model()
         
@@ -29,7 +29,7 @@ class MVCSampleTests: XCTestCase {
         XCTAssertEqual(model.count, -1)
     }
     
-    func test_カウントがマイナス10される() throws {
+    func test_Model_カウントがマイナス10される() throws {
         // Arrange
         let model = Model()
         
@@ -42,7 +42,7 @@ class MVCSampleTests: XCTestCase {
         XCTAssertEqual(model.count, -10)
     }
     
-    func test_カウントがプラス1される() throws {
+    func test_Model_カウントがプラス1される() throws {
         // Arrange
         let model = Model()
         
@@ -53,7 +53,7 @@ class MVCSampleTests: XCTestCase {
         XCTAssertEqual(model.count, 1)
     }
     
-    func test_カウントがプラス10される() throws {
+    func test_Model_カウントがプラス10される() throws {
         // Arrange
         let model = Model()
         
@@ -65,7 +65,48 @@ class MVCSampleTests: XCTestCase {
         // Assert
         XCTAssertEqual(model.count, 10)
     }
+    
+    func test_Controller_マイナス関数が呼ばれる() throws {
+        // Arrange
+        // Modelのモック関数をインスタンス化
+        let model = MockModel()
+        // ModelのモックをDependency Injectionする
+        let controller = Controller.init(myModel: model)
+        
+        // Act
+        controller.onMinusTapped()
+        
+        // Assert
+        XCTAssertTrue(model.result)
+    }
+    
+    func test_Controller_プラス関数が呼ばれる() throws {
+        // Arrange
+        // Modelのモック関数をインスタンス化
+        let model = MockModel()
+        // ModelのモックをDependency Injectionする
+        let controller = Controller.init(myModel: model)
+        
+        // Act
+        controller.onPlusTapped()
+        
+        // Assert
+        XCTAssertTrue(model.result)
+    }
+    
+    // Modelのモック
+    class MockModel: ModelProtocol {
+        var result = false
 
+        func countDown() {
+            result = true
+        }
+        
+        func countUp() {
+            result = true
+        }
+    }
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
