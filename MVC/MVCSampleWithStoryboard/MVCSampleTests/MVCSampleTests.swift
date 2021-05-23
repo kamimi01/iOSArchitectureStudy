@@ -107,6 +107,12 @@ class MVCSampleTests: XCTestCase {
         }
     }
     
+    func test_View_画面が表示されたらラベルに0が表示される() {
+        // Arrange
+        // Act
+        // Assert
+    }
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
