@@ -234,7 +234,7 @@
   - Flux
   - Redux
 
-![](./Common/iOSアプリのアーキテクチャの採用戦略.png)
+![](./Common/iOSアプリのアーキテクチャ採用戦略.png)
 
 #### MVPのSupervising ViewとPassive View
 
@@ -245,6 +245,9 @@
   - アプリケーションで取り扱うプレゼンテーションロジックが簡単なものならば、テスト不要か？
     - YES→Supervising View
     - NO→Passive View
+- 迷った場合やMVPに慣れていない場合
+  - Passive Viewを選択！
+    - 「Viewが持つ簡単なプレゼンテーションロジック」の「簡単、」の判断が難しいため
 
 ## システムアーキテクチャ
 

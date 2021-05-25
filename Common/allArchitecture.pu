@@ -1,6 +1,6 @@
 @startuml
 
-title "iOSアプリのアーキテクチャの採用戦略"
+title "iOSアプリのアーキテクチャ採用戦略"
 
 start
 
@@ -16,10 +16,6 @@ partition かなりの小規模アプリ（企業ではほぼ不採用） {
 
 partition 中・大規模アプリ（企業での採用レベル） #fff5ee {
   repeat :<b>MVC（CocoaMVC）</b>;
-  floating note right
-    ViewとModelを切り離せるが
-    ViewControllerがFatになりがち
-  end note
 
   repeat while(プレゼンテーションロジックを\n切り出したいか？) is(no) not(yes)
     :MVP\n（SuperVising ViewまたはPassive View）;
@@ -31,7 +27,8 @@ partition 中・大規模アプリ（企業での採用レベル） #fff5ee {
       フロー同期。
       隣り合ったコンポーネント間での
       データの受け渡しが得意だが
-      共通して複数のデータを受け渡すのは苦手
+      共通したデータを受け渡すのは苦手
+      （迷った場合やMVPに不慣れならこっち！）
     end note
     stop
   else (no)
@@ -39,9 +36,10 @@ partition 中・大規模アプリ（企業での採用レベル） #fff5ee {
 
     note right
       フロー同期とオブザーバ同期両方。
-      隣り合ったコンポーネント間での
-      データの受け渡しが得意だが
-      共通して複数のデータを受け渡すのは苦手
+      オブザーバ同期を使うことによるメリットを教授できるが
+      Viewで持つプレゼンテーションロジックをどれにするか
+      ModelとViewの接続に使う、適切なイベント粒度の設計が
+      難しいため、慣れが必要
     end note
     stop
   endif
