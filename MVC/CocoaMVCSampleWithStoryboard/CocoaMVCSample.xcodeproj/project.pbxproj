@@ -50,8 +50,8 @@
 		D41DE89A265D174F00ACE07C /* CocoaMVCSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaMVCSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41DE89C265D174F00ACE07C /* CocoaMVCSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaMVCSampleUITests.swift; sourceTree = "<group>"; };
 		D41DE89E265D174F00ACE07C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D4933799265D106F006538B5 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomView.swift; path = ../../../../../../../Documents/CustomView.swift; sourceTree = "<group>"; };
-		D493379D265D1076006538B5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Model.swift; path = ../../../../../../../Documents/Model.swift; sourceTree = "<group>"; };
+		D4933799265D106F006538B5 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		D493379D265D1076006538B5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D49337A6265D12DE006538B5 /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
