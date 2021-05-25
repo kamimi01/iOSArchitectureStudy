@@ -6,42 +6,46 @@
 <details>
 <summary>Details</summary>
 
-- [2種類のアーキテクチャ](#2%E7%A8%AE%E9%A1%9E%E3%81%AE%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3)
-- [GUIアーキテクチャ](#gui%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3)
-  - [Model-View-Controller（MVC）モデル](#model-view-controllermvc%E3%83%A2%E3%83%87%E3%83%AB)
-    - [UML](#uml)
-    - [特徴](#%E7%89%B9%E5%BE%B4)
-    - [実装](#%E5%AE%9F%E8%A3%85)
-    - [課題](#%E8%AA%B2%E9%A1%8C)
-  - [Presentation Modelパターン（Application Modelパターン）](#presentation-model%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3application-model%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3)
-    - [UML](#uml-1)
-    - [特徴](#%E7%89%B9%E5%BE%B4-1)
-    - [課題](#%E8%AA%B2%E9%A1%8C-1)
-  - [Model-View-ViewModel（MVVM）](#model-view-viewmodelmvvm)
-    - [UML](#uml-2)
-    - [特徴](#%E7%89%B9%E5%BE%B4-2)
-    - [課題（デメリット）](#%E8%AA%B2%E9%A1%8C%E3%83%87%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88)
-    - [参考](#%E5%8F%82%E8%80%83)
-  - [Model-View-Presenter（MVP）](#model-view-presentermvp)
-    - [MVP（Taligent）](#mvptaligent)
-    - [MVP（Supervising Controller）](#mvpsupervising-controller)
-    - [MVP（Passive View）](#mvppassive-view)
-  - [Flux](#flux)
-    - [UML](#uml-3)
-    - [特徴](#%E7%89%B9%E5%BE%B4-3)
-  - [Redux](#redux)
-    - [特徴](#%E7%89%B9%E5%BE%B4-4)
-- [システムアーキテクチャ](#%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3)
-  - [レイヤードアーキテクチャ](#%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%83%89%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3)
-  - [Hexagonal Architecture（Ports And Adapters Architecture）](#hexagonal-architectureports-and-adapters-architecture)
-    - [参考](#%E5%8F%82%E8%80%83-1)
-  - [Onion Architecture](#onion-architecture)
-    - [参考](#%E5%8F%82%E8%80%83-2)
-  - [Clean Architecture](#clean-architecture)
-- [モバイルアプリにおけるアーキテクチャ](#%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3)
-  - [CoordinatorパターンとMVVM-C](#coordinator%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%81%A8mvvm-c)
-    - [参考](#%E5%8F%82%E8%80%83-3)
-  - [RouterパターンとVIPER](#router%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%81%A8viper)
+- [「iOSアプリ設計パターン入門」から学ぶ、設計の基礎](#iosアプリ設計パターン入門から学ぶ設計の基礎)
+  - [Table of Contents](#table-of-contents)
+  - [2種類のアーキテクチャ](#2種類のアーキテクチャ)
+  - [GUIアーキテクチャ](#guiアーキテクチャ)
+    - [Model-View-Controller（MVC）モデル](#model-view-controllermvcモデル)
+      - [UML](#uml)
+      - [特徴](#特徴)
+      - [実装](#実装)
+      - [課題](#課題)
+    - [Presentation Modelパターン（Application Modelパターン）](#presentation-modelパターンapplication-modelパターン)
+      - [UML](#uml-1)
+      - [特徴](#特徴-1)
+      - [課題](#課題-1)
+    - [Model-View-ViewModel（MVVM）](#model-view-viewmodelmvvm)
+      - [UML](#uml-2)
+      - [特徴](#特徴-2)
+      - [課題（デメリット）](#課題デメリット)
+      - [参考](#参考)
+    - [Model-View-Presenter（MVP）](#model-view-presentermvp)
+      - [MVP（Taligent）](#mvptaligent)
+      - [MVP（Supervising Controller）](#mvpsupervising-controller)
+      - [MVP（Passive View）](#mvppassive-view)
+    - [Flux](#flux)
+      - [UML](#uml-3)
+      - [特徴](#特徴-3)
+    - [Redux](#redux)
+      - [特徴](#特徴-4)
+    - [その他の整理](#その他の整理)
+      - [データの2つの同期方法](#データの2つの同期方法)
+  - [システムアーキテクチャ](#システムアーキテクチャ)
+    - [レイヤードアーキテクチャ](#レイヤードアーキテクチャ)
+    - [Hexagonal Architecture（Ports And Adapters Architecture）](#hexagonal-architectureports-and-adapters-architecture)
+      - [参考](#参考-1)
+    - [Onion Architecture](#onion-architecture)
+      - [参考](#参考-2)
+    - [Clean Architecture](#clean-architecture)
+  - [モバイルアプリにおけるアーキテクチャ](#モバイルアプリにおけるアーキテクチャ)
+    - [CoordinatorパターンとMVVM-C](#coordinatorパターンとmvvm-c)
+      - [参考](#参考-3)
+    - [RouterパターンとVIPER](#routerパターンとviper)
 
 </details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -172,6 +176,10 @@
 - Modelの特徴
   - 純粋なドメインロジックの表現
 
+- MVP（Passive View）と異なる点
+  - 複雑なプレゼンテーションロジックは、Presenterが担当し、簡単なものはViewに残す
+  - ViewはControllerを介さずに直接Modelの更新を検知して、プレゼンテーションロジックを担当することもある
+
 #### MVP（Passive View）
 
 ![](./MVP/MVP_PassiveView/Model-View-Presenter（Passive%20View）.png)
@@ -181,6 +189,8 @@
   - オブザーバ同期をやめたView
   - Viewが完全に受動的な存在に
 - Appleが提唱する「Cocoa MVC」はMVP（Passive View）のことと考えて良い
+- MVP（Supervising View）と異なる点
+  - プレゼンテーションロジックを完全に、Presenterに担当させる
 
 ### Flux
 
@@ -197,6 +207,20 @@
 #### 特徴
 
 - Fluxを発展させ、関数型言語のElmの影響を大きく受けたアーキテクチャ
+
+### その他の整理
+
+#### データの2つの同期方法
+
+|同期方法|概要                |メリット　　　　　|デメリット         |使用シーン|
+|----------|-------------------|-----------------|-------------|---|
+|フロー同期|上位レイヤーのデータを下位レイヤーに都度セットしてデータを同期する、手続き的な同期方法。|・データのフローを追いやすい <br> ・|・手続き的なので、共通したデータを参照している全ての箇所の参照を持っておく必要がある。そのために参照の管理が煩雑になりやすい。|push遷移でドリルダウンしていくような隣り合った画面間でのデータ共有|
+|オブザーバ同期|関し元である下位レイヤーが関し先である上位レイヤーからObserverパターンで送られるイベント通知を受け取ってデータを同期させる、宣言的な同期方法。|・共通した複数箇所でデータを同期しやすい。|・データが変更される度に同期処理が実行されるため、いつデータが同期されるかが追いづらくなる|・ハートや星マークでのお気に入りのデータ管理のように、複数タブや階層が離れた画面でも、各画面が共通のデータ領域の変更を関ししているために、同期箇所で他の画面の参照を持つ必要がない。|
+
+- 注意したいこと
+  - コンポーネント間の距離が遠いのに、無理にフロー同期を使用しないこと！
+    - 上位レイヤーが知らなくても良い下位レイヤーを知る（依存する）ことになり、データフローを追いやすいというメリットがなくなるため
+  - どちらが優れているとかではなく、それぞれメリットデメリットがあるので、**設計段階でどちらを採用するか考える必要がある**
 
 ## システムアーキテクチャ
 
