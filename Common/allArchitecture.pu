@@ -1,0 +1,50 @@
+@startuml
+
+title "iOSアプリのアーキテクチャの採用戦略"
+
+start
+
+partition かなりの小規模アプリ（企業ではほぼ不採用） {
+  :アーキテクチャを意識しない\n（全てをViewControllerに書く）;
+  :MVC（原初）;
+
+  note right
+    iOSアプリではほぼ使用されない
+    iOSアプリでMVCといえば、CocoaMVCを指す
+  end note
+}
+
+partition 中・大規模アプリ（企業での採用レベル） #fff5ee {
+  repeat :<b>MVC（CocoaMVC）</b>;
+  floating note right
+    ViewとModelを切り離せるが
+    ViewControllerがFatになりがち
+  end note
+
+  repeat while(プレゼンテーションロジックを\n切り出したいか？) is(no) not(yes)
+    :MVP\n（SuperVising ViewまたはPassive View）;
+
+  if (プレゼンテーションロジックを\n全てテストしたいか？\n（簡単なプレゼンテーションロジックのテストも必要か？）) then (yes)
+    :<b>MVP（Passive View）</b>;
+
+    note left
+      フロー同期。
+      隣り合ったコンポーネント間での
+      データの受け渡しが得意だが
+      共通して複数のデータを受け渡すのは苦手
+    end note
+    stop
+  else (no)
+    :<b>MVP（Supervising View）</b>;
+
+    note right
+      フロー同期とオブザーバ同期両方。
+      隣り合ったコンポーネント間での
+      データの受け渡しが得意だが
+      共通して複数のデータを受け渡すのは苦手
+    end note
+    stop
+  endif
+}
+
+@enduml
