@@ -1,14 +1,15 @@
 //
 //  ViewController.swift
-//  MVCSample
+//  CocoaMVCSample
 //
-//  Created by Mika Urakawa on 2021/05/16.
+//  Created by 史翔新 on 2018/11/07.
+//  Copyright © 2018年 史翔新. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
-    
+	
 	var myModel: Model? {
 		didSet {
             // ViewとModelとを結合し、Modelの監視を開始する
@@ -16,11 +17,11 @@ class ViewController: UIViewController {
 			registerModel()
 		}
 	}
-
-    private lazy var customView = CustomView()
-
+	
+	private(set) lazy var myView: View = View()
+	
 	override func loadView() {
-		view = customView
+		view = myView
 	}
 	
 	deinit {
@@ -33,17 +34,17 @@ class ViewController: UIViewController {
 
 		guard let model = myModel else { return }
 		
-        customView.label.text = model.count.description
+		myView.label.text = model.count.description
 		
-        customView.minusButton.addTarget(self, action: #selector(onMinusTapped), for: .touchUpInside)
-        customView.plusButton.addTarget(self, action: #selector(onPlusTapped), for: .touchUpInside)
+		myView.minusButton.addTarget(self, action: #selector(onMinusTapped), for: .touchUpInside)
+		myView.plusButton.addTarget(self, action: #selector(onPlusTapped), for: .touchUpInside)
 		
 		model.notificationCenter.addObserver(forName: .init(rawValue: "count"),
 											 object: nil,
 											 queue: nil,
 											 using: { [unowned self] notification in
 												if let count = notification.userInfo?["count"] as? Int {
-													self.customView.label.text = "\(count)"
+													self.myView.label.text = "\(count)"
 												}
 		})
 		

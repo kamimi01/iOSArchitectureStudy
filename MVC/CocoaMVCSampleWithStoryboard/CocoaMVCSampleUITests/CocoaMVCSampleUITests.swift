@@ -2,7 +2,8 @@
 //  CocoaMVCSampleUITests.swift
 //  CocoaMVCSampleUITests
 //
-//  Created by Mika Urakawa on 2021/05/23.
+//  Created by Mika Urakawa on 2021/05/25.
+//  Copyright © 2021 史翔新. All rights reserved.
 //
 
 import XCTest
