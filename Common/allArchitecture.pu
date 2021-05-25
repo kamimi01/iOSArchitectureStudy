@@ -15,10 +15,15 @@ partition かなりの小規模アプリ（企業ではほぼ不採用） {
 }
 
 partition 中・大規模アプリ（企業での採用レベル） #fff5ee {
-  repeat :<b>MVC（CocoaMVC）</b>;
+  if (プレゼンテーションロジックを\n切り出したいか？) then (no)
+    :<b>MVC（CocoaMVC）</b>;
 
-  repeat while(プレゼンテーションロジックを\n切り出したいか？) is(no) not(yes)
-    :MVP\n（SuperVising ViewまたはPassive View）;
+    note left
+      ViewとModelを切り離すことができるが
+      仲介となるViewControllerがFatになりがち
+    end note
+    stop
+  endif
 
   if (プレゼンテーションロジックを\n全てテストしたいか？\n（簡単なプレゼンテーションロジックのテストも必要か？）) then (yes)
     :<b>MVP（Passive View）</b>;
