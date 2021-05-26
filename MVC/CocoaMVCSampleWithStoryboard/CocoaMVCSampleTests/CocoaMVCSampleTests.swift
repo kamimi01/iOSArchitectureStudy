@@ -19,52 +19,56 @@ class CocoaMVCSampleTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func test_Model_カウントがマイナス1される() {
-        // Arrange
-        let model = Model()
-        
-        // Act
-        model.countDown()
-        
-        // Assert
-        XCTAssertEqual(model.count, -1)
-    }
-    
-    func test_Model_カウントがマイナス10される() throws {
-        // Arrange
-        let model = Model()
-        
-        // Act
-        for _ in 1..<11 {
+    func test_Model_カウントがマイナスされる() throws {
+        XCTContext.runActivity(named: "カウントがマイナス1される") { _ in
+            // Arrange
+            let model = Model()
+            
+            // Act
             model.countDown()
+            
+            // Assert
+            XCTAssertEqual(model.count, -1)
         }
         
-        // Assert
-        XCTAssertEqual(model.count, -10)
+        XCTContext.runActivity(named: "カウントがマイナス10される") { _ in
+            // Arrange
+            let model = Model()
+            
+            // Act
+            for _ in 1..<11 {
+                model.countDown()
+            }
+            
+            // Assert
+            XCTAssertEqual(model.count, -10)
+        }
+        
     }
     
-    func test_Model_カウントがプラス1される() throws {
-        // Arrange
-        let model = Model()
-        
-        // Act
-        model.countUp()
-        
-        // Assert
-        XCTAssertEqual(model.count, 1)
-    }
-    
-    func test_Model_カウントがプラス10される() throws {
-        // Arrange
-        let model = Model()
-        
-        // Act
-        for _ in 1..<11 {
+    func test_Model_カウントがプラスされる() throws {
+        XCTContext.runActivity(named: "カウントがプラス1される") { _ in
+            // Arrange
+            let model = Model()
+            
+            // Act
             model.countUp()
+            
+            // Assert
+            XCTAssertEqual(model.count, 1)
         }
-        
-        // Assert
-        XCTAssertEqual(model.count, 10)
+        XCTContext.runActivity(named: "カウントがプラス10される") { _ in
+            // Arrange
+            let model = Model()
+            
+            // Act
+            for _ in 1..<11 {
+                model.countUp()
+            }
+            
+            // Assert
+            XCTAssertEqual(model.count, 10)
+        }
     }
     
     func test_Controller_マイナス関数が呼ばれる() throws{
