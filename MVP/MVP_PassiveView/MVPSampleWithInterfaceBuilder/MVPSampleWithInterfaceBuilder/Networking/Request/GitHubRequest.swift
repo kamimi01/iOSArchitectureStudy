@@ -42,4 +42,18 @@ extension GitHubRequest {
         
         return urlRequest
     }
+    
+    // URLSessionクラスを通じて、サーバから受け取ったData型とHTTPURLResponse型の値を元に、
+    // レスポンスの型を表す連想型Responseの値を生成する
+    func response(from data: Data, urlResponse: URLResponse) throws -> Response {
+        let decoder = JSONDecoder()
+        
+        if case (200..<300)? = (urlResponse as? HTTPURLResponse)?.statusCode {
+            // JSONからモデルをインスタンス化
+            return try decoder.decode(Response.self, from: data)
+        } else {
+            // JSONからAPIエラーをインスタンス化
+            throw try decoder.decode(GitHubAPIError.self, from: data)
+        }
+    }
 }

@@ -9,4 +9,10 @@ import Foundation
 
 struct GitHubAPIError: Decodable, Error {
     let message: String
+    let documentURL: String
+    
+    enum CodingKeys: String, CodingKey {
+        case message
+        case documentURL = "document_url"
+    }
 }
