@@ -10,10 +10,23 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
 
-
+    // アプリを起動した時に、func application(_:willFinishLaunchingWithOptions)の次に呼ばれるメソッド
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // アプリ初回起動時に表示するViewControllerはSearchUser
+        let searchUserViewController = UIStoryboard(name: "SearchUser", bundle: nil).instantiateInitialViewController() as! SearchUserViewController
+        let navigationController = UINavigationController(rootViewController: searchUserViewController)
+
+        // アプリ初回起動時に渡すModelとPresenterを定義して、必要な箇所へ渡す
+        let model = SearchUserModel()
+        let presenter = SearchUserPresenter(view: searchUserViewController, model: model)
+        searchUserViewController.inject(presenter: presenter)
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

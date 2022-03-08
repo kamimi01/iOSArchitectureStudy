@@ -17,6 +17,9 @@
 		D4124D76266BAC0800BEA8E0 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4124D75266BAC0800BEA8E0 /* Repository.swift */; };
 		D4124D7C266CAA1B00BEA8E0 /* GitHubClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4124D7B266CAA1B00BEA8E0 /* GitHubClient.swift */; };
 		D4124D81266CB0BB00BEA8E0 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4124D80266CB0BB00BEA8E0 /* Result.swift */; };
+		D4124D92266CC72800BEA8E0 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4124D90266CC72800BEA8E0 /* UserCell.swift */; };
+		D4124D93266CC72800BEA8E0 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4124D91266CC72800BEA8E0 /* UserCell.xib */; };
+		D4124D98266CF92600BEA8E0 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4124D97266CF92500BEA8E0 /* UserDetailViewController.swift */; };
 		D4B30BC4265E8395006746CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B30BC3265E8395006746CD /* AppDelegate.swift */; };
 		D4B30BC6265E8395006746CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B30BC5265E8395006746CD /* SceneDelegate.swift */; };
 		D4B30BCD265E8398006746CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4B30BCC265E8398006746CD /* Assets.xcassets */; };
@@ -29,7 +32,6 @@
 		D4B30C25265EAD26006746CD /* SearchUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B30C24265EAD26006746CD /* SearchUserPresenter.swift */; };
 		D4B30C2D265EAD4F006746CD /* UserDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B30C2C265EAD4F006746CD /* UserDetailPresenter.swift */; };
 		D4B30C32265EAD5B006746CD /* UserDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B30C31265EAD5B006746CD /* UserDetailModel.swift */; };
-		D4B30C37265EAD68006746CD /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B30C36265EAD68006746CD /* UserCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,9 @@
 		D4124D75266BAC0800BEA8E0 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		D4124D7B266CAA1B00BEA8E0 /* GitHubClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubClient.swift; sourceTree = "<group>"; };
 		D4124D80266CB0BB00BEA8E0 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		D4124D90266CC72800BEA8E0 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		D4124D91266CC72800BEA8E0 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		D4124D97266CF92500BEA8E0 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		D4B30BC0265E8395006746CD /* MVPSampleWithInterfaceBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVPSampleWithInterfaceBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B30BC3265E8395006746CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4B30BC5265E8395006746CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +83,6 @@
 		D4B30C24265EAD26006746CD /* SearchUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserPresenter.swift; sourceTree = "<group>"; };
 		D4B30C2C265EAD4F006746CD /* UserDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailPresenter.swift; sourceTree = "<group>"; };
 		D4B30C31265EAD5B006746CD /* UserDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailModel.swift; sourceTree = "<group>"; };
-		D4B30C36265EAD68006746CD /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +285,7 @@
 		D4B30BFA265EA3C7006746CD /* UserDetail */ = {
 			isa = PBXGroup;
 			children = (
+				D4124D97266CF92500BEA8E0 /* UserDetailViewController.swift */,
 			);
 			path = UserDetail;
 			sourceTree = "<group>";
@@ -320,7 +325,8 @@
 		D4B30C1B265EABC0006746CD /* UserCell */ = {
 			isa = PBXGroup;
 			children = (
-				D4B30C36265EAD68006746CD /* UserCell.swift */,
+				D4124D90266CC72800BEA8E0 /* UserCell.swift */,
+				D4124D91266CC72800BEA8E0 /* UserCell.xib */,
 			);
 			path = UserCell;
 			sourceTree = "<group>";
@@ -428,6 +434,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4124D93266CC72800BEA8E0 /* UserCell.xib in Resources */,
 				D4B30BD0265E8398006746CD /* LaunchScreen.storyboard in Resources */,
 				D4B30C00265EA451006746CD /* SearchUser.storyboard in Resources */,
 				D4B30BCD265E8398006746CD /* Assets.xcassets in Resources */,
@@ -460,7 +467,6 @@
 				D4124D4726666EAF00BEA8E0 /* GitHubClientError.swift in Sources */,
 				D4124D61266B9E2F00BEA8E0 /* HTTPMethod.swift in Sources */,
 				D4124D6E266BA89900BEA8E0 /* SearchResponse.swift in Sources */,
-				D4B30C37265EAD68006746CD /* UserCell.swift in Sources */,
 				D4B30C2D265EAD4F006746CD /* UserDetailPresenter.swift in Sources */,
 				D4B30C05265EA46E006746CD /* SearchUserViewController.swift in Sources */,
 				D4B30C32265EAD5B006746CD /* UserDetailModel.swift in Sources */,
@@ -470,7 +476,9 @@
 				D4124D76266BAC0800BEA8E0 /* Repository.swift in Sources */,
 				D4B30C25265EAD26006746CD /* SearchUserPresenter.swift in Sources */,
 				D4124D57266672DE00BEA8E0 /* GitHubRequest.swift in Sources */,
+				D4124D92266CC72800BEA8E0 /* UserCell.swift in Sources */,
 				D4124D7C266CAA1B00BEA8E0 /* GitHubClient.swift in Sources */,
+				D4124D98266CF92600BEA8E0 /* UserDetailViewController.swift in Sources */,
 				D4124D66266BA03300BEA8E0 /* GitHubAPI.swift in Sources */,
 				D4B30BC6265E8395006746CD /* SceneDelegate.swift in Sources */,
 			);
