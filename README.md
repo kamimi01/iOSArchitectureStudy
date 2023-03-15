@@ -243,6 +243,30 @@
 #### 特徴
 
 - 単一方向のデータフロー
+  - それによりどこで状態の変更が起きているか、わかりやすい
+  - 状態に関するコードは Store が持つので、ViewController の肥大化を防ぐことができる
+- Action
+  - ActionCreator
+    - なんらかの処理を行い、Action を生成する
+    - 生成した Action を Dispatcher に送信する
+- Dispatcher
+  - ActionCreator から Action を受け取る
+  - 受け取った Action を Store に伝える
+  ```swift
+  protocol Dispatcher {
+    // ActionCreator が Action を送信する
+    func dispatch(_ action: Action)
+    // Store から呼び出して、Callback を登録し、Action を受け取る
+    func register(callback: () -> Void)
+  }
+  ```
+- Store
+  - Dispatcher の `register`関数を使って Callback を登録し、その Callback から Action を受け取る
+  - 受け取った Action の type と data をもとに、自身の状態を更新する
+  - 更新した場合は、View へ変更通知を送る
+  - 任意のコンテキストに対して、１つの Store が存在
+    - アプリケーションと同じライフサイクルか、シングルトンのクラスになりがち
+  - Dispatcher に Action を送る前に Store を生成しないと、Action に対する処理が実行されない場合があるので、注意
 
 ### Redux
 
