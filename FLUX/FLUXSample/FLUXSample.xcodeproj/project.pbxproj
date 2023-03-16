@@ -13,6 +13,10 @@
 		D4D9B50929C3C1E300C5010D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4D9B50729C3C1E300C5010D /* Main.storyboard */; };
 		D4D9B50B29C3C1E600C5010D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4D9B50A29C3C1E600C5010D /* Assets.xcassets */; };
 		D4D9B50E29C3C1E600C5010D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4D9B50C29C3C1E600C5010D /* LaunchScreen.storyboard */; };
+		D4D9B51629C3C8A600C5010D /* ActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9B51529C3C8A600C5010D /* ActionCreator.swift */; };
+		D4D9B51829C3C8D400C5010D /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9B51729C3C8D400C5010D /* Action.swift */; };
+		D4D9B51E29C3CA0E00C5010D /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9B51D29C3CA0E00C5010D /* Repository.swift */; };
+		D4D9B52029C3CA3300C5010D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9B51F29C3CA3300C5010D /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		D4D9B50A29C3C1E600C5010D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4D9B50D29C3C1E600C5010D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4D9B50F29C3C1E600C5010D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4D9B51529C3C8A600C5010D /* ActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCreator.swift; sourceTree = "<group>"; };
+		D4D9B51729C3C8D400C5010D /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		D4D9B51D29C3CA0E00C5010D /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		D4D9B51F29C3CA3300C5010D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,35 @@
 		D4D9B50029C3C1E300C5010D /* FLUXSample */ = {
 			isa = PBXGroup;
 			children = (
+				D4D9B51929C3C9D700C5010D /* GitHub */,
 				D4D9B50129C3C1E300C5010D /* AppDelegate.swift */,
+				D4D9B51529C3C8A600C5010D /* ActionCreator.swift */,
 				D4D9B50329C3C1E300C5010D /* SceneDelegate.swift */,
 				D4D9B50529C3C1E300C5010D /* RepositorySearchViewController.swift */,
 				D4D9B50729C3C1E300C5010D /* Main.storyboard */,
 				D4D9B50A29C3C1E600C5010D /* Assets.xcassets */,
 				D4D9B50C29C3C1E600C5010D /* LaunchScreen.storyboard */,
 				D4D9B50F29C3C1E600C5010D /* Info.plist */,
+				D4D9B51729C3C8D400C5010D /* Action.swift */,
 			);
 			path = FLUXSample;
+			sourceTree = "<group>";
+		};
+		D4D9B51929C3C9D700C5010D /* GitHub */ = {
+			isa = PBXGroup;
+			children = (
+				D4D9B51C29C3C9FD00C5010D /* Entity */,
+			);
+			path = GitHub;
+			sourceTree = "<group>";
+		};
+		D4D9B51C29C3C9FD00C5010D /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				D4D9B51D29C3CA0E00C5010D /* Repository.swift */,
+				D4D9B51F29C3CA3300C5010D /* User.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +166,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4D9B51629C3C8A600C5010D /* ActionCreator.swift in Sources */,
 				D4D9B50629C3C1E300C5010D /* RepositorySearchViewController.swift in Sources */,
 				D4D9B50229C3C1E300C5010D /* AppDelegate.swift in Sources */,
+				D4D9B51829C3C8D400C5010D /* Action.swift in Sources */,
 				D4D9B50429C3C1E300C5010D /* SceneDelegate.swift in Sources */,
+				D4D9B51E29C3CA0E00C5010D /* Repository.swift in Sources */,
+				D4D9B52029C3CA3300C5010D /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
