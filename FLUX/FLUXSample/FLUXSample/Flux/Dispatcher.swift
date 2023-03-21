@@ -10,6 +10,7 @@ import Foundation
 typealias DispatchToken = String
 
 class Dispatcher {
+    // 1つのコンテキストに対して1つだけ存在するものなので、シングルトンにする
     static let shared = Dispatcher()
 
     let lock: NSLocking  // 複数のスレッドからAction がDispatchされる可能性があるので、排他制御が必要
