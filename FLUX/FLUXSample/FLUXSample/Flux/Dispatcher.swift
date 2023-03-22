@@ -9,6 +9,7 @@ import Foundation
 
 typealias DispatchToken = String
 
+/// Viewからの入力を受け、ActionをStoreに送る
 class Dispatcher {
     // 1つのコンテキストに対して1つだけ存在するものなので、シングルトンにする
     static let shared = Dispatcher()
@@ -21,6 +22,7 @@ class Dispatcher {
         self.callbacks = [:]
     }
 
+    /// 処理をcallbacksの配列に登録する
     func register(callback: @escaping (Action) -> ()) -> DispatchToken {
         lock.lock(); defer { lock.unlock() }
 
@@ -29,12 +31,14 @@ class Dispatcher {
         return token  // 登録を解除するためのトークン
     }
 
+    /// 処理の登録を外す
     func unregister(_ token: DispatchToken) {
         lock.lock(); defer { lock.unlock() }
 
         callbacks.removeValue(forKey: token)
     }
 
+    /// callbacksに登録されているすべてのcallbackにActionを伝える
     func dispatch(_ action: Action) {
         lock.lock(); defer { lock.unlock() }
 

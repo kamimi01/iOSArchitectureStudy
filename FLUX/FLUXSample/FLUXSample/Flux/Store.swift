@@ -9,7 +9,7 @@ import Foundation
 
 typealias Subscription = NSObjectProtocol
 
-// 基底クラスのStore
+/// 基底クラスのStoreで、Disptcherから受け取ったActionに応じた処理をして、Viewに伝える
 class Store {
     private enum NotificationName {
         static let storeChanged = Notification.Name("store-changed")
@@ -48,11 +48,21 @@ class Store {
 
     /// ViewがStoreの変更を監視する
     final func addListener(callback: @escaping () -> ()) -> Subscription {
-
+        let using: (Notification) -> () = { notification in
+            if notification.name == NotificationName.storeChanged {
+                callback()
+            }
+        }
+        return notificationCenter.addObserver(
+            forName: NotificationName.storeChanged,
+            object: nil,
+            queue: nil,
+            using: using
+        )
     }
 
     /// ViewがStoreの監視を中止する
     final func removeListener(_ subscription: Subscription) {
-        
+        notificationCenter.removeObserver(subscription)
     }
 }
