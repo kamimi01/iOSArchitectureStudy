@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D4CDB09929CA5B5500155EEA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CDB09829CA5B5500155EEA /* Store.swift */; };
+		D4CDB09B29CBA7D300155EEA /* SearchRepositoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CDB09A29CBA7D300155EEA /* SearchRepositoryStore.swift */; };
 		D4D9B50229C3C1E300C5010D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9B50129C3C1E300C5010D /* AppDelegate.swift */; };
 		D4D9B50429C3C1E300C5010D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9B50329C3C1E300C5010D /* SceneDelegate.swift */; };
 		D4D9B50629C3C1E300C5010D /* RepositorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9B50529C3C1E300C5010D /* RepositorySearchViewController.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		D4CDB09829CA5B5500155EEA /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		D4CDB09A29CBA7D300155EEA /* SearchRepositoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryStore.swift; sourceTree = "<group>"; };
 		D4D9B4FE29C3C1E300C5010D /* FLUXSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLUXSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4D9B50129C3C1E300C5010D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4D9B50329C3C1E300C5010D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				D4D9B51529C3C8A600C5010D /* ActionCreator.swift */,
 				D4D9B53329C9090E00C5010D /* Dispatcher.swift */,
 				D4CDB09829CA5B5500155EEA /* Store.swift */,
+				D4CDB09A29CBA7D300155EEA /* SearchRepositoryStore.swift */,
 			);
 			path = Flux;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				D4D9B52D29C5238800C5010D /* Request.swift in Sources */,
 				D4CDB09929CA5B5500155EEA /* Store.swift in Sources */,
 				D4D9B51629C3C8A600C5010D /* ActionCreator.swift in Sources */,
+				D4CDB09B29CBA7D300155EEA /* SearchRepositoryStore.swift in Sources */,
 				D4D9B50629C3C1E300C5010D /* RepositorySearchViewController.swift in Sources */,
 				D4D9B52229C520A800C5010D /* GitHubApiSession.swift in Sources */,
 				D4D9B50229C3C1E300C5010D /* AppDelegate.swift in Sources */,

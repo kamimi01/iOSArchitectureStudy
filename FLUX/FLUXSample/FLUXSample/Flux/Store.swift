@@ -9,6 +9,7 @@ import Foundation
 
 typealias Subscription = NSObjectProtocol
 
+// FIXME: 本当はクラスではなく、protocol にしたい
 /// 基底クラスのStoreで、Disptcherから受け取ったActionに応じた処理をして、Viewに伝える
 class Store {
     private enum NotificationName {
