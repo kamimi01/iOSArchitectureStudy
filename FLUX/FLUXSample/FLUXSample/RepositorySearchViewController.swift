@@ -22,10 +22,28 @@ class RepositorySearchViewController: UIViewController {
         return view
     }()
 
+    // FIXME: 本当は init() メソッドの中で呼びたいが、呼べなかったのでここで代入する
+    private var actionCreator: ActionCreator = .init()
+    private var searchStore: SearchRepositoryStore = .shared
+
+    private lazy var reloadSubscription: Subscription = {
+        return searchStore.addListener { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+    }()
+
+    private var repositories: [Repository] {
+        return searchStore.repositories
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setup()
+
+        _ = reloadSubscription
     }
 
     private func setup() {
@@ -34,7 +52,6 @@ class RepositorySearchViewController: UIViewController {
         view.addSubview(searchBar)
 
         let screenWidth = self.view.frame.width
-        let screenHeight = self.view.frame.height
 
         searchBar.frame = CGRect(x: 0, y: 100, width: screenWidth, height: 50)
 
@@ -56,7 +73,11 @@ class RepositorySearchViewController: UIViewController {
 
 extension RepositorySearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("サーチバーがタップされた")
+        guard let text = searchBar.text else { return }
+        if text.isEmpty { return }
+
+        actionCreator.clearRepository()
+        actionCreator.searchRepositories(query: text)x
     }
 }
 

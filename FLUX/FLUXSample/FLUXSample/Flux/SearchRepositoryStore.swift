@@ -9,7 +9,7 @@ import Foundation
 
 class SearchRepositoryStore: Store {
     /// Store コンポーネント自体は複数存在するが、SearchRepositoryStoreはアプリ上で一つ
-    let shared = SearchRepositoryStore(dispatcher: .shared)
+    static let shared = SearchRepositoryStore(dispatcher: .shared)
     /// Storeでのみ変更可能で、外部にはgetterのみ公開する
     private(set) var repositories: [Repository] = []
 

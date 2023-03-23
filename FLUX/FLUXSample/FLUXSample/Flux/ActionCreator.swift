@@ -20,7 +20,7 @@ class ActionCreator {
     }
 
     /// レポジトリ検索
-    func searchRepositories(query: String, page: Int) {
+    func searchRepositories(query: String, page: Int = 1) {
         apiSession.searchRepositories(query: query, page: page) { [dispatcher] result in
             switch result {
             case let .success((repositories, _)):
