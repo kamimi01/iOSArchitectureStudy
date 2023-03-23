@@ -8,29 +8,68 @@
 import UIKit
 
 class RepositorySearchViewController: UIViewController {
+    let avengers: [String] = ["ソー", "ドクター・ストレンジ", "アイアンマン", "キャプテン・マーベル", "スパイダーマン", "ハルク", "キャプテン・アメリカ"]
 
-    private let searchField = UISearchBar()
+    private let searchBar: UISearchBar = {
+        let view = UISearchBar(frame: .zero)
+        return view
+    }()
+
+    private let tableView: UITableView = {
+        let view = UITableView(frame: .zero, style: .grouped)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setup()
+    }
+
+    private func setup() {
+        searchBar.delegate = self
+
+        view.addSubview(searchBar)
+
         let screenWidth = self.view.frame.width
         let screenHeight = self.view.frame.height
 
-        searchField.frame = CGRect(x: 0, y: screenHeight / 4, width: screenWidth, height: 50)
-        searchField.delegate = self
+        searchBar.frame = CGRect(x: 0, y: 100, width: screenWidth, height: 50)
 
-        self.view.addSubview(searchField)
+        searchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+
+        tableView.delegate = self
+        tableView.dataSource = self
+
+        view.addSubview(tableView)
+
+        tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 0).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
     }
 }
 
 extension RepositorySearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("検索ボタンが押された！")
+        print("サーチバーがタップされた")
+    }
+}
+
+extension RepositorySearchViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        avengers.count
     }
 
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        print("テキストフィールド入力開始")
-        return true
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        var content = cell.defaultContentConfiguration()
+        content.text = avengers[indexPath.row]
+        cell.contentConfiguration = content
+        return cell
     }
 }
