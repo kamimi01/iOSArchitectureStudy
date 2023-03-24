@@ -24,10 +24,12 @@ class Dispatcher {
 
     /// 処理をcallbacksの配列に登録する
     func register(callback: @escaping (Action) -> ()) -> DispatchToken {
+        print("registerを実行する")
         lock.lock(); defer { lock.unlock() }
 
         let token = UUID().uuidString
         callbacks[token] = callback
+        print("register終了")
         return token  // 登録を解除するためのトークン
     }
 
@@ -43,6 +45,7 @@ class Dispatcher {
         lock.lock(); defer { lock.unlock() }
 
         callbacks.forEach { _, callback in
+            print("callbackにActionを伝える")
             callback(action)
         }
     }

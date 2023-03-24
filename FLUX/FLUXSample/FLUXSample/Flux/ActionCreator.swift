@@ -25,6 +25,7 @@ class ActionCreator {
             switch result {
             case let .success((repositories, _)):
                 // Dispatcherに結果を渡す（ActionCreator自身がデータを保持することはしない）
+                print("2. Dispatcher でデータをStore に伝える")
                 dispatcher.dispatch(.addRepositories(repositories))
             case let .failure(error):
                 // ログに出すだけ

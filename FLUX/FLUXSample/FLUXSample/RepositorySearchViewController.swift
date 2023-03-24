@@ -76,20 +76,22 @@ extension RepositorySearchViewController: UISearchBarDelegate {
         guard let text = searchBar.text else { return }
         if text.isEmpty { return }
 
+        print("1. ActionCreatorが呼ばれる")
         actionCreator.clearRepository()
-        actionCreator.searchRepositories(query: text)x
+        actionCreator.searchRepositories(query: text)
     }
 }
 
 extension RepositorySearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        avengers.count
+        repositories.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         var content = cell.defaultContentConfiguration()
-        content.text = avengers[indexPath.row]
+//        content.text = avengers[indexPath.row]
+        content.text = repositories[indexPath.row].name
         cell.contentConfiguration = content
         return cell
     }
