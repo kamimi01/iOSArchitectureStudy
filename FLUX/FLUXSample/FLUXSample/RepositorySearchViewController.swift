@@ -8,8 +8,6 @@
 import UIKit
 
 class RepositorySearchViewController: UIViewController {
-    let avengers: [String] = ["ソー", "ドクター・ストレンジ", "アイアンマン", "キャプテン・マーベル", "スパイダーマン", "ハルク", "キャプテン・アメリカ"]
-
     private let searchBar: UISearchBar = {
         let view = UISearchBar(frame: .zero)
         return view
@@ -90,7 +88,6 @@ extension RepositorySearchViewController: UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         var content = cell.defaultContentConfiguration()
-//        content.text = avengers[indexPath.row]
         content.text = repositories[indexPath.row].name
         cell.contentConfiguration = content
         return cell

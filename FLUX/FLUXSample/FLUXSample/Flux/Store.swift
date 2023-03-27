@@ -20,7 +20,7 @@ class Store {
     private lazy var dispatchToken: DispatchToken = {
         print("dispatchTokenが生成された")
         return dispatcher.register(callback: { [weak self] action in
-            // callbackがActionを受け取ると、ここの処理が始まる→これはcallbackだから？
+            // callbackがActionを受け取ると、ここの処理が始まる→これは Dispatcherクラスの dispatch メソッドで実行される
             guard let self = self else { return }
             print("受け取ったActionを処理する")
             self.onDispatch(action)

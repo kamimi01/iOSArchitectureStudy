@@ -22,7 +22,8 @@ class Dispatcher {
         self.callbacks = [:]
     }
 
-    /// 処理をcallbacksの配列に登録する
+    /// 処理をcallbacksの配列に登録する（登録するだけで実行はしない）
+    // ActionはVCが生成するので、callback処理にして呼び出し元に処理を任せる
     func register(callback: @escaping (Action) -> ()) -> DispatchToken {
         print("registerを実行する")
         lock.lock(); defer { lock.unlock() }
@@ -45,8 +46,8 @@ class Dispatcher {
         lock.lock(); defer { lock.unlock() }
 
         callbacks.forEach { _, callback in
-            print("callbackにActionを伝える")
-            callback(action)
+            print("callbackにActionを伝えて、callbckを実行する")
+            callback(action) // ここで Store クラスにある self.onDispatch を実行して Store に データを渡す
         }
     }
 }
