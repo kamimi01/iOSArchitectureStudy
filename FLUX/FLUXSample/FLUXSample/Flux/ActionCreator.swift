@@ -18,7 +18,10 @@ class ActionCreator {
         self.dispatcher = dispatcher
         self.apiSession = apiSession
     }
+}
 
+// MARK: - 検索
+extension ActionCreator {
     /// レポジトリ検索
     func searchRepositories(query: String, page: Int = 1) {
         apiSession.searchRepositories(query: query, page: page) { [dispatcher] result in
@@ -37,5 +40,12 @@ class ActionCreator {
     /// 検索結果をクリアする
     func clearRepository() {
         dispatcher.dispatch(.clearRepositories)
+    }
+}
+
+// MARK: - その他
+extension ActionCreator {
+    func setSelectedRepository(_ repository: Repository?) {
+        dispatcher.dispatch(.selectedRepository(repository))
     }
 }

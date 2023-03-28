@@ -19,6 +19,8 @@ class SearchRepositoryStore: Store {
             self.repositories = repositories
         case .clearRepositories:
             self.repositories.removeAll()
+        default:
+            return
         }
         // 変更を通知する
         emitChange()

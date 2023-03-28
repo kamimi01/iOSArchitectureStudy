@@ -92,4 +92,9 @@ extension RepositorySearchViewController: UITableViewDelegate, UITableViewDataSo
         cell.contentConfiguration = content
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let repository = searchStore.repositories[indexPath.row]
+        actionCreator.setSelectedRepository(repository)
+    }
 }
