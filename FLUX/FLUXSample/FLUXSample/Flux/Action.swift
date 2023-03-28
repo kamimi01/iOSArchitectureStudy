@@ -14,5 +14,5 @@ import Foundation
 enum Action {
     case addRepositories([Repository])
     case clearRepositories
-    case selectedRepository(Repository)
+    case selectedRepository(Repository?)
 }

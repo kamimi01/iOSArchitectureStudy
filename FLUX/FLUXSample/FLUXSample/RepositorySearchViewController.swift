@@ -94,6 +94,7 @@ extension RepositorySearchViewController: UITableViewDelegate, UITableViewDataSo
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("押された")
         let repository = searchStore.repositories[indexPath.row]
         actionCreator.setSelectedRepository(repository)
     }

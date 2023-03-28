@@ -10,7 +10,27 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private let selectedStore = SelectedRepositoryStore.shared
 
+    private lazy var showRepositoryDetailSubscription: Subscription = {
+        // TODO: タブバーやnav barのView側の実装をする必要がある
+        // Storeに保持している選択されたリポジトリのデータを監視して、変更があったら遷移する
+        return selectedStore.addListener { [weak self] in
+            DispatchQueue.main.sync {
+                guard let self = self,
+                      self.selectedStore.repository != nil,
+                      let rootViewController = self.window?.rootViewController,
+                      let tabBarController = rootViewController as? UITabBarController,
+                      let selectedViewController = tabBarController.selectedViewController,
+                      let navigationController = selectedViewController as? UINavigationController
+                else { return }
+
+                // Store に保持しているリポジトリを表示するので、初期化時にデータは渡さない
+                let viewController = RepositoryDetailViewController()
+                navigationController.pushViewController(viewController, animated: true)
+            }
+        }
+    }()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.

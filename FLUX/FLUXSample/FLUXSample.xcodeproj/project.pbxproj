@@ -10,6 +10,7 @@
 		D4CDB09929CA5B5500155EEA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CDB09829CA5B5500155EEA /* Store.swift */; };
 		D4CDB09B29CBA7D300155EEA /* SearchRepositoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CDB09A29CBA7D300155EEA /* SearchRepositoryStore.swift */; };
 		D4CDB0BD29D391D700155EEA /* SelectedRepositoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CDB0BC29D391D700155EEA /* SelectedRepositoryStore.swift */; };
+		D4CDB0BF29D3944500155EEA /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CDB0BE29D3944500155EEA /* RepositoryDetailViewController.swift */; };
 		D4D9B50229C3C1E300C5010D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9B50129C3C1E300C5010D /* AppDelegate.swift */; };
 		D4D9B50429C3C1E300C5010D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9B50329C3C1E300C5010D /* SceneDelegate.swift */; };
 		D4D9B50629C3C1E300C5010D /* RepositorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9B50529C3C1E300C5010D /* RepositorySearchViewController.swift */; };
@@ -34,6 +35,7 @@
 		D4CDB09829CA5B5500155EEA /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		D4CDB09A29CBA7D300155EEA /* SearchRepositoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryStore.swift; sourceTree = "<group>"; };
 		D4CDB0BC29D391D700155EEA /* SelectedRepositoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedRepositoryStore.swift; sourceTree = "<group>"; };
+		D4CDB0BE29D3944500155EEA /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
 		D4D9B4FE29C3C1E300C5010D /* FLUXSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLUXSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4D9B50129C3C1E300C5010D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4D9B50329C3C1E300C5010D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				D4D9B50129C3C1E300C5010D /* AppDelegate.swift */,
 				D4D9B50329C3C1E300C5010D /* SceneDelegate.swift */,
 				D4D9B50529C3C1E300C5010D /* RepositorySearchViewController.swift */,
+				D4CDB0BE29D3944500155EEA /* RepositoryDetailViewController.swift */,
 				D4D9B50729C3C1E300C5010D /* Main.storyboard */,
 				D4D9B50A29C3C1E600C5010D /* Assets.xcassets */,
 				D4D9B50C29C3C1E600C5010D /* LaunchScreen.storyboard */,
@@ -244,6 +247,7 @@
 				D4CDB0BD29D391D700155EEA /* SelectedRepositoryStore.swift in Sources */,
 				D4D9B52F29C524D600C5010D /* SearchRepositoryRequest.swift in Sources */,
 				D4D9B50429C3C1E300C5010D /* SceneDelegate.swift in Sources */,
+				D4CDB0BF29D3944500155EEA /* RepositoryDetailViewController.swift in Sources */,
 				D4D9B52529C5216F00C5010D /* Pagination.swift in Sources */,
 				D4D9B51E29C3CA0E00C5010D /* Repository.swift in Sources */,
 				D4D9B52029C3CA3300C5010D /* User.swift in Sources */,
