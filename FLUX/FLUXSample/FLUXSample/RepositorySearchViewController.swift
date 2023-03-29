@@ -45,18 +45,24 @@ class RepositorySearchViewController: UIViewController {
     }
 
     private func setup() {
+        title = "リポジトリ検索"
+        view.backgroundColor = .white
+
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.delegate = self
 
         view.addSubview(searchBar)
 
         let screenWidth = self.view.frame.width
 
-        searchBar.frame = CGRect(x: 0, y: 100, width: screenWidth, height: 50)
+        searchBar.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 50)
 
-        searchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        searchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        print(navigationController?.navigationBar.frame.height)
         searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
 
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
 

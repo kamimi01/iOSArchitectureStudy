@@ -8,14 +8,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "21D7FCEB-174C-4911-B30C-529A4CB4D66D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FLUXSample/RepositorySearchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "searchBarSearchButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D7323378-EF9B-467B-A1C0-3A75226DEE91"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FLUXSample/Flux/Dispatcher.swift"
@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "FCB8C755-006A-49BA-9FE0-0864AEF4E350"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FLUXSample/Flux/Dispatcher.swift"
@@ -52,7 +52,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "FCB8C755-006A-49BA-9FE0-0864AEF4E350 - 9f627acdbc739105"
+                  uuid = "FCB8C755-006A-49BA-9FE0-0864AEF4E350 - 9f627acdbc7390c7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -62,12 +62,12 @@
                   urlString = "file:///Users/mikaurakawa/Documents/SourceCode/iOSArchitectureStudy/FLUX/FLUXSample/FLUXSample/Flux/Dispatcher.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "157">
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "378">
                </Location>
                <Location
-                  uuid = "FCB8C755-006A-49BA-9FE0-0864AEF4E350 - 79bf2da75bce37eb"
+                  uuid = "FCB8C755-006A-49BA-9FE0-0864AEF4E350 - 79bf2da75bce3629"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -77,8 +77,8 @@
                   urlString = "file:///Users/mikaurakawa/Documents/SourceCode/iOSArchitectureStudy/FLUX/FLUXSample/FLUXSample/Flux/Dispatcher.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
                   offsetFromSymbolStart = "20">
                </Location>
             </Locations>
@@ -88,7 +88,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3E9E949A-610B-4BF3-8062-175F76C9FB62"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FLUXSample/Flux/Dispatcher.swift"
@@ -100,7 +100,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "3E9E949A-610B-4BF3-8062-175F76C9FB62 - c358ee5315f7587b"
+                  uuid = "3E9E949A-610B-4BF3-8062-175F76C9FB62 - c358ee5315f75996"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -110,12 +110,12 @@
                   urlString = "file:///Users/mikaurakawa/Documents/SourceCode/iOSArchitectureStudy/FLUX/FLUXSample/FLUXSample/Flux/Dispatcher.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "58">
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "105">
                </Location>
                <Location
-                  uuid = "3E9E949A-610B-4BF3-8062-175F76C9FB62 - 79bf2da75bce31fb"
+                  uuid = "3E9E949A-610B-4BF3-8062-175F76C9FB62 - 79bf2da75bce3016"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -125,8 +125,8 @@
                   urlString = "file:///Users/mikaurakawa/Documents/SourceCode/iOSArchitectureStudy/FLUX/FLUXSample/FLUXSample/Flux/Dispatcher.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
                   offsetFromSymbolStart = "20">
                </Location>
             </Locations>
@@ -136,7 +136,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "1C8ED142-4BD5-46F4-B747-8A875213B2BE"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FLUXSample/Flux/Store.swift"
@@ -146,13 +146,45 @@
             endingLineNumber = "22"
             landmarkName = "Store"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "1C8ED142-4BD5-46F4-B747-8A875213B2BE - a122d928d630196b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Swift.String in FLUXSample.Store.dispatchToken.getter : Swift.String"
+                  moduleName = "FLUXSample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/iOSArchitectureStudy/FLUX/FLUXSample/FLUXSample/Flux/Store.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "199">
+               </Location>
+               <Location
+                  uuid = "1C8ED142-4BD5-46F4-B747-8A875213B2BE - 6e4c82cf3352369f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (FLUXSample.Action) -&gt; () in closure #1 () -&gt; Swift.String in FLUXSample.Store.dispatchToken.getter : Swift.String"
+                  moduleName = "FLUXSample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/iOSArchitectureStudy/FLUX/FLUXSample/FLUXSample/Flux/Store.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "81">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "299D9B42-EB4D-4333-93C3-D736BE95494E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FLUXSample/Flux/Store.swift"
@@ -184,7 +216,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "EC0454B5-5EDD-46C9-83C8-F01710545E2B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FLUXSample/Flux/SearchRepositoryStore.swift"
@@ -200,7 +232,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "106598DA-0CE9-44AA-84D2-E32AA024DF19"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FLUXSample/Flux/Store.swift"
@@ -232,7 +264,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "EFB0109F-CB44-48D4-9A17-F18BD144477A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FLUXSample/Flux/Store.swift"
@@ -258,6 +290,102 @@
             endingLineNumber = "43"
             landmarkName = "Dispatcher"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD931CAD-A5E5-4578-AA45-4926B6A24CB2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FLUXSample/SceneDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "SceneDelegate"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "AD931CAD-A5E5-4578-AA45-4926B6A24CB2 - f9edf7738822fefe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; __C.NSObject in FLUXSample.SceneDelegate.showRepositoryDetailSubscription.getter : __C.NSObject"
+                  moduleName = "FLUXSample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/iOSArchitectureStudy/FLUX/FLUXSample/FLUXSample/SceneDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "459">
+               </Location>
+               <Location
+                  uuid = "AD931CAD-A5E5-4578-AA45-4926B6A24CB2 - f9edf7738822fefe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; __C.NSObject in FLUXSample.SceneDelegate.showRepositoryDetailSubscription.getter : __C.NSObject"
+                  moduleName = "FLUXSample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/iOSArchitectureStudy/FLUX/FLUXSample/FLUXSample/SceneDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "804">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8078BC7F-06C3-49F6-AB53-336194158BC4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FLUXSample/SceneDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "SceneDelegate"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "8078BC7F-06C3-49F6-AB53-336194158BC4 - f9edf7738822fe34"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; __C.NSObject in FLUXSample.SceneDelegate.showRepositoryDetailSubscription.getter : __C.NSObject"
+                  moduleName = "FLUXSample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/iOSArchitectureStudy/FLUX/FLUXSample/FLUXSample/SceneDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "125">
+               </Location>
+               <Location
+                  uuid = "8078BC7F-06C3-49F6-AB53-336194158BC4 - f9edf7738822fe34"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; __C.NSObject in FLUXSample.SceneDelegate.showRepositoryDetailSubscription.getter : __C.NSObject"
+                  moduleName = "FLUXSample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/iOSArchitectureStudy/FLUX/FLUXSample/FLUXSample/SceneDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "188">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

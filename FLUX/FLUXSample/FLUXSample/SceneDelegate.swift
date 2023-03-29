@@ -16,27 +16,42 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // TODO: タブバーやnav barのView側の実装をする必要がある
         // Storeに保持している選択されたリポジトリのデータを監視して、変更があったら遷移する
         return selectedStore.addListener { [weak self] in
-            DispatchQueue.main.sync {
+            DispatchQueue.main.async {
                 guard let self = self,
                       self.selectedStore.repository != nil,
-                      let rootViewController = self.window?.rootViewController,
-                      let tabBarController = rootViewController as? UITabBarController,
-                      let selectedViewController = tabBarController.selectedViewController,
-                      let navigationController = selectedViewController as? UINavigationController
+//                      let rootViewController = self.window?.rootViewController,
+//                      let tabBarController = rootViewController as? UITabBarController,
+//                      let selectedViewController = tabBarController.selectedViewController,
+//                      let navigationController = selectedViewController as? UINavigationController,
+                      let navBar = self.window?.rootViewController as? UINavigationController
                 else { return }
 
                 // Store に保持しているリポジトリを表示するので、初期化時にデータは渡さない
                 let viewController = RepositoryDetailViewController()
-                navigationController.pushViewController(viewController, animated: true)
+                navBar.pushViewController(viewController, animated: true)
             }
         }
     }()
+
+    typealias LaunchOptions = [UIApplication.LaunchOptionsKey: Any]
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        //UIwindwosのアンラップ
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+
+        //アンラップしたものWindwoSceceをselfに設定
+        let window = UIWindow(windowScene:  windowScene)
+        self.window = window
+
+        //ルートビューを選択
+        window.rootViewController = UINavigationController(rootViewController: RepositorySearchViewController())
+        //「window」を最前線に表示する
+        window.makeKeyAndVisible()
+
+        _ = showRepositoryDetailSubscription
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
